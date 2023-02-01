@@ -1,5 +1,5 @@
 from volleyball import *
-from collective import *
+#from collective import *
 
 import pickle
 
