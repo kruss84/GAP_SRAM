@@ -64,7 +64,7 @@ class Config(object):
         self.exp_note='Group-Activity-Recognition'
         self.exp_name=None
         self.resume=False
-        self.path='result'
+        self.path='data/volleyball/'
         
     def init_config(self, need_new_folder=True):
         if self.exp_name is None:
