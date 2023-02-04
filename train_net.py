@@ -17,7 +17,9 @@ import random
 
 import pdb
 
-        
+import gc
+gc.collect()
+torch.cuda.empty_cache()
 
 def set_bn_eval(m):
     classname = m.__class__.__name__
@@ -116,6 +118,9 @@ def train_net(cfg):
     start_epoch=1
     for epoch in range(start_epoch, start_epoch+cfg.max_epoch):
         
+        gc.collect()
+        torch.cuda.empty_cache()
+        
         if epoch in cfg.lr_plan:
             adjust_lr(optimizer, cfg.lr_plan[epoch])
         
@@ -123,6 +128,9 @@ def train_net(cfg):
         train_info=train_volleyball(training_loader, model, device, optimizer, D2, D2_solver, epoch, cfg)
         show_epoch_info('Train', cfg.log_path, train_info)
 
+        gc.collect()
+        torch.cuda.empty_cache()
+        
         # Test
         if epoch % cfg.test_interval_epoch == 0:
             test_info=test_volleyball(validation_loader, model, device, epoch, cfg)
