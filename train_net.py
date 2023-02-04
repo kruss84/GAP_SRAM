@@ -64,24 +64,13 @@ def train_net(cfg):
         device = torch.device('cpu')
     
     # Build model and optimizer
-    basenet_list={'volleyball':Basenet_volleyball}
-    gcnnet_list={'volleyball':GCNnet_volleyball}
-    
-    if cfg.training_stage==1:
-        Basenet=basenet_list[cfg.dataset_name]
-        model=Basenet(cfg)
-    elif cfg.training_stage==2:
-        GCNnet=gcnnet_list[cfg.dataset_name]
-        model=GCNnet(cfg)
-        # Load backbone
-        model.loadmodel(cfg.stage1_model_path)
-    else:
-        assert(False)
-    
-    #GCNnet=GCNnet_volleyball
-    #model=GCNnet(cfg)
+    # basenet_list={'volleyball':Basenet_volleyball}
+    # gcnnet_list={'volleyball':GCNnet_volleyball}
+        
+    GCNnet=GCNnet_volleyball
+    model=GCNnet(cfg)
     # Load backbone
-    #model.loadmodel(cfg.stage1_model_path)
+    model.loadmodel(cfg.stage1_model_path)
     
     
     if cfg.resume:
