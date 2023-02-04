@@ -12,6 +12,7 @@ cfg.stage1_model_path='data/volleyball/videos/STAGE1_MODEL.pth'
 #cfg.stage2_model_path='/home/junwen/opengit/ARG_group/ARG_source/result/[Volleyball_stage2_stage2]<2019-08-05_16-20-34>/stage2_epoch6_83.82%.pth'
 #cfg.resume=True
 cfg.train_backbone=True
+cfg.lr_plan={}
 
 cfg.batch_size=4
 cfg.test_batch_size=2
