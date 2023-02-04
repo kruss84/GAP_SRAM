@@ -4,6 +4,8 @@ from train_net import *
 
 cfg=Config('volleyball')
 
+cfg.dataset_name = 'volleyball'
+
 cfg.use_multi_gpu=False
 cfg.device_list="0,1"
 cfg.training_stage=1
