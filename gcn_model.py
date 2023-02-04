@@ -229,7 +229,7 @@ class GCNnet_volleyball(nn.Module):
             stage_boxes_in_flat=torch.reshape(stage_boxes_in,(B*TS*N,4))
         
             stage_boxes_idx=[i * torch.ones(N, dtype=torch.int)   for i in range(B*TS) ]
-            #stage_boxes_idx=torch.stack(stage_boxes_idx).to(device=stage_boxes_in.device)  # B*T, N
+            stage_boxes_idx=torch.stack(stage_boxes_idx).to(device=stage_boxes_in.device)  # B*T, N
             stage_boxes_idx_flat=torch.reshape(stage_boxes_idx,(B*TS*N,))  #B*T*N,
         
             stage_images_in_flat=prep_images(stage_images_in_flat)   #(B*T,C=3,720,1280)
