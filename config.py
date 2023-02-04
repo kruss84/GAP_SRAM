@@ -33,7 +33,10 @@ class Config(object):
 
         
         # Activity Action
+        self.num_actions = 9  #number of action categories
         self.num_activities = 8  #number of activity categories
+        self.actions_loss_weight = 1.0  #weight used to balance action loss and activity loss
+        self.actions_weights = None
 
         # Sample
         self.num_before = 10
