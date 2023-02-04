@@ -6,7 +6,7 @@ cfg=Config('volleyball')
 
 cfg.dataset_name = 'volleyball'
 
-cfg.use_multi_gpu=False
+cfg.use_multi_gpu=True
 cfg.device_list="0,1"
 cfg.training_stage=2
 cfg.stage1_model_path='data/volleyball/videos/stage1_epoch68_87.81%.pth'
@@ -16,8 +16,8 @@ cfg.stage1_model_path='data/volleyball/videos/stage1_epoch68_87.81%.pth'
 cfg.train_backbone=False
 cfg.lr_plan={}
 
-cfg.batch_size=4
-cfg.test_batch_size=2
+cfg.batch_size=2
+cfg.test_batch_size=1
 cfg.num_frames=20
 cfg.train_learning_rate=1e-4
 # cfg.test_before_train=True
